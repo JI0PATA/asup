@@ -1,0 +1,193 @@
+* {
+    font-family: 'mech', sans-serif;
+}
+
+@font-face {
+    font-family: 'mech';
+    src: url("../fonts/mech.ttf");
+}
+
+.wp {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+#app {
+    min-height: 100%;
+    height: 100%;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding-top: 40px;
+}
+
+main > div > div {
+    display: inline-block;
+    vertical-align: top;
+}
+
+main > div .left {
+    width: 35%;
+}
+
+main > div .left form {
+    margin-top: 50px;
+}
+
+main > div .left form .hat {
+    padding: 15px;
+    font-size: 25px;
+    color: #fff;
+    text-transform: uppercase;
+    background: #114a9b;
+    text-align: center;
+}
+
+main > div .left form .inputs {
+    background: #4ea0da;
+    padding: 15px;
+    text-align: center;
+}
+
+main > div .left form .inputs > div {
+    margin-top: 15px;
+}
+
+
+main > div .left form .inputs > div > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+main > div .left form .inputs > div > div {
+    background-color: #114a9b;
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 15px 15px;
+}
+
+main > div .left form .inputs > div input {
+    height: 30px;
+    width: calc(100% - 62px);
+    margin-left: -5px;
+    font-size: 18px;
+    padding-left: 10px;
+}
+
+main > div .left form .inputs > div .btn {
+    background: #114a9b;
+    border: 1px solid #114a9b;
+    color: #fff;
+    text-align: center;
+    margin-left: 20px;
+    padding: 0;
+    width: 152px;
+}
+
+main > div .left form .hat > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+main > div .right {
+    width: 62%;
+}
+
+main > div .right .title {
+    font-size: 50px;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: right;
+    padding-top: 30px;
+}
+
+main > div .right .images {
+    padding-top: 50px;
+    text-align: right;
+}
+
+main > div .right .images img {
+    display: inline-block;
+    vertical-align: top;
+}
+
+main > div .right .images img:nth-of-type(1) {
+    margin-right: 100px;
+}
+
+.orders > a {
+    margin-right: 30px;
+}
+
+.orders > div {
+    width: 100%;
+    margin: 0 auto;
+    background: #fff;
+    border: 2px solid #ddd;
+    margin-top: 30px;
+}
+.orders > div > div {
+    display: inline-block;
+    vertical-align: top;
+}
+.orders > div > .img {
+    width: 30%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.orders > div > .text {
+    padding: 10px 20px;
+    width: 69%;
+    overflow: hidden;
+    max-height: 90%;
+}
+.orders > div > .text .date {
+    font-size: 13px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+.orders > div > .text .date > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+.orders > div > .text .date object {
+    font-size: 18px;
+    margin-left: 20px;
+    transition: .2s;
+}
+.orders > div > .text .date object:hover {
+    color: #0063A5;
+}
+.orders > div > .text .title {
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+.orders > div > .text .desc {
+    font-size: 16px;
+}
+.orders > div > .text .desc * {
+    line-height: 20px;
+    font-weight: normal;
+    font-size: 17px;
+    text-align: justify;
+}
+
+.orders > div .btn {
+    font-size: 20px;
+    margin-top: 20px;
+    padding: 5px 15px;
+    border: none;
+    background: #0063A5;
+    color: #fff;
+    border-radius: 5px;
+}

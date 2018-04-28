@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
+
 use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -28,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/login';
 
     /**
      * Create a new controller instance.
@@ -41,32 +43,24 @@ class RegisterController extends Controller
     }
 
     /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
+     * @param Request $request
+     * @return Request|\Illuminate\Http\RedirectResponse
      */
-    protected function validator(array $data)
+    public function create(Request $request)
     {
-        return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-        ]);
-    }
+        if ($request['password'] !== $request['conf-password']) return createMsg(0, 'Пароли не совпадают');
 
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\User
-     */
-    protected function create(array $data)
-    {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+        if ($request['key'] !== 'ktits2018') return createMsg(0, 'Неверный код!');
+
+        User::create([
+            'login' => $request['login'],
+            'password' => Hash::make($request['password']),
+            'email' => $request['email'],
+            'name' => $request['name'],
+            'position' => $request['position'],
+            'group_id' => $request['group_id'],
         ]);
+
+        return createMsg(1, 'Вы успешно зарегистрированы!', route('login'));
     }
 }

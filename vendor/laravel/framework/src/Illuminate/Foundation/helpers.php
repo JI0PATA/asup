@@ -134,7 +134,7 @@ if (! function_exists('asset')) {
      */
     function asset($path, $secure = null)
     {
-        return app('url')->asset($path, $secure);
+        return app('url')->asset('public/'.$path, $secure);
     }
 }
 
@@ -989,4 +989,16 @@ if (! function_exists('view')) {
 
         return $factory->make($view, $data, $mergeData);
     }
+}
+
+
+function createMsg($status, $msg, $path = '') {
+    if ($status === 0) $class = 'alert-danger';
+    else if ($status === 1) $class = 'alert-success';
+
+    if ($path === '') $path = $_SERVER['HTTP_REFERER'];
+
+    session()->flash('popupMsg', ['msg' => $msg, 'class' => $class]);
+
+    return redirect($path);
 }

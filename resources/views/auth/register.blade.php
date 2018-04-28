@@ -1,77 +1,79 @@
+{{ config(['app.name' => 'Регистрация']) }}
+
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+    @push('styles')
+        <style>
+            html, body {
+                min-height: 100%;
+                height: 100%;
+            }
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+            main.py-4 {
+                padding: 0 !important;
+            }
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+            nav {
+                display: none !important;
+            }
+        </style>
+    @endpush
+    <main style="background-image: url('{{ asset('img/asup/bg.png') }}');">
+        <div class="wp">
+            <div class="left">
+                <img src="{{ asset('img/asup/logo.png') }}" alt="">
+                <form action="{{ route('register') }}" method="POST">
+                    {{ csrf_field() }}
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+                    <div class="hat">
+                        <img src="{{ asset('img/asup/lk.png') }}" alt="">
+                        личный кабинет
+                    </div>
 
-                                @if ($errors->has('name'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                    <input type="hidden" name="group_id" value="1">
+
+                    <div class="inputs">
+                        <div>
+                            <div style="background-image: url({{ asset('img/asup/login.png') }})"></div>
+                            <input type="text" placeholder="Логин" name="login" required>
+                        </div>
+                        <div>
+                            <div style="background-image: url({{ asset('img/asup/password.png') }})"></div>
+                            <input type="password" placeholder="Пароль" name="password" required>
+                        </div>
+                        <div>
+                            <div style="background-image: url({{ asset('img/asup/password.png') }})"></div>
+                            <input type="password" placeholder="Пароль ещё раз" name="conf-password" required>
+                        </div>
+                        <div>
+                            <div style="background-image: url({{ asset('img/asup/email.png') }})"></div>
+                            <input type="email" placeholder="E-mail" name="email" required>
+                        </div>
+                        <div>
+                            <div style="background-image: url({{ asset('img/asup/fio.png') }})"></div>
+                            <input type="text" placeholder="Полное ФИО" name="name" required>
+                        </div>
+                        <div>
+                            <div style="background-image: url({{ asset('img/asup/post.png') }})"></div>
+                            <input type="text" placeholder="Должность" name="position" required>
+                        </div>
+                        <div>
+                            <div style="background-image: url({{ asset('img/asup/key.png') }})"></div>
+                            <input type="text" placeholder="Код" style="width: 150px" name="key" required>
+                            <input type="submit" value="Регистрация" class="btn">
                         </div>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                    </div>
+                </form>
+            </div>
+            <div class="right">
+                <div class="title">техническая служба</div>
+                <div class="images">
+                    <img src="{{ asset('img/asup/img1.png') }}" alt="">
+                    <img src="{{ asset('img/asup/img2.png') }}" alt="">
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </main>
 @endsection
