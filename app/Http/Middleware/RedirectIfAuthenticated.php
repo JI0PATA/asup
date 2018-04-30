@@ -18,7 +18,11 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
+            createMsg(0, 'Доступна только неавторизованным пользователям');
             return redirect()->route('home');
+        } else if (session()->get('admin') === '1') {
+            createMsg(0, 'Доступна только неавторизованным пользователям');
+            return redirect()->route('admin.index');
         }
 
         return $next($request);

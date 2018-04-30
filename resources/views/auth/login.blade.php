@@ -7,17 +7,17 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header">{{ __('Авторизация') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('Логин') }}</label>
+                            <label for="login" class="col-sm-4 col-form-label text-md-right">{{ __('Логин') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" required autofocus>
+                                <input id="login" type="text" class="form-control" name="login" required autofocus>
                             </div>
                         </div>
 

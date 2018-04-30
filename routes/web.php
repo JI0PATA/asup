@@ -16,3 +16,11 @@ Route::get('/', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::post('register', 'Auth\RegisterController@create')->name('register');
+Route::post('login', 'Auth\LoginController@login')->name('login')->middleware('AdminLogin');
+
+Route::prefix('admin')->middleware('AdminPanel')->group(function() {
+    Route::post('logout', 'AdminController@logout')->name('admin.logout');
+
+    Route::get('/', 'RequestController@newRequests')->name('admin.index');
+
+});

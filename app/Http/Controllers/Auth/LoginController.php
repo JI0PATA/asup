@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -20,12 +21,23 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
+    public function username()
+    {
+        return 'login';
+    }
+
     /**
-     * Where to redirect users after login.
+     * Where to redirect users after login.k
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
+
+    protected function authenticated(Request $request, $user)
+    {
+        createMsg(1, 'Вы успешно авторизовались!');
+    }
+
 
     /**
      * Create a new controller instance.

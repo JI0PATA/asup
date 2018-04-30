@@ -992,13 +992,9 @@ if (! function_exists('view')) {
 }
 
 
-function createMsg($status, $msg, $path = '') {
+function createMsg($status, $msg) {
     if ($status === 0) $class = 'alert-danger';
     else if ($status === 1) $class = 'alert-success';
 
-    if ($path === '') $path = $_SERVER['HTTP_REFERER'];
-
     session()->flash('popupMsg', ['msg' => $msg, 'class' => $class]);
-
-    return redirect($path);
 }
