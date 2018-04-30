@@ -4,6 +4,7 @@ namespace App\Http;
 
 use App\Http\Middleware\AdminLogin;
 use App\Http\Middleware\AdminPanel;
+use App\Http\Middleware\DistributionGroups;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -62,5 +63,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'AdminLogin' => AdminLogin::class,
         'AdminPanel' => AdminPanel::class,
+        'DistributionGroups' => DistributionGroups::class,
     ];
 }

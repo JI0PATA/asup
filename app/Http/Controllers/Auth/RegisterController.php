@@ -61,6 +61,7 @@ class RegisterController extends Controller
             'group_id' => $request['group_id'],
         ]);
 
-        return createMsg(1, 'Вы успешно зарегистрированы!', route('login'));
+        createMsg(1, 'Вы успешно зарегистрированы!', route('login'));
+        return redirect()->route('login');
     }
 }

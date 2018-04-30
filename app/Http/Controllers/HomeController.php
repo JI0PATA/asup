@@ -2,19 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Application;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     /**
      * Show the application dashboard.
@@ -23,6 +16,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $applications = Application::with('user')->where('create_user_id', Auth::id())->orderBy('id', 'DESC')->get();
+
+        return view('index', [
+            'applications' => $applications
+        ]);
+    }
+
+    public function showRequestFormAdd()
+    {
+        return view('modules.applications.add');
     }
 }

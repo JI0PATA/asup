@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'АСУП') }}</title>
+    <title>{{ config('app.name') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -27,7 +27,7 @@
     <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'Laravel') }}
+                {{ config('app.name') }}
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,6 +42,33 @@
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="{{ route('admin.index') }}" role="button" aria-haspopup="true"
+                           aria-expanded="false" v-pre>
+                            <?php
+                                $countNewApplication = App\Application::where('level', 0)->count();
+                            ?>
+                            Новые заявки {!! $countNewApplication === 0 ? '' : "<span class='badge badge-pill badge-secondary'>$countNewApplication</span>" !!}
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="{{ route('admin.applications') }}" role="button" aria-haspopup="true"
+                           aria-expanded="false" v-pre>
+                            Обработанные заявки
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="{{ route('admin.engineers') }}" role="button" aria-haspopup="true"
+                           aria-expanded="false" v-pre>
+                            Техники
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="{{ route('admin.users') }}" role="button" aria-haspopup="true"
+                           aria-expanded="false" v-pre>
+                            Пользователи
+                        </a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -65,7 +92,7 @@
         </div>
     </nav>
 
-    <main class="py-4">
+    <main class="py-4 wp">
         @yield('content')
     </main>
 </div>

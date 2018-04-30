@@ -18,7 +18,6 @@ class AdminLogin
 
         if ($request->login === 'admin' && $request->password === 'admin') {
             $request->session()->put('admin', '1');
-//            dd($request->session());
             createMsg(1, 'Добро пожаловать, Главный инженер!');
             return redirect()->route('admin.index');
         }

@@ -26,16 +26,20 @@ class LoginController extends Controller
         return 'login';
     }
 
-    /**
-     * Where to redirect users after login.k
-     *
-     * @var string
-     */
-    protected $redirectTo = '/';
 
+    /**
+     * @param Request $request
+     * @param $user
+     * @return \Illuminate\Http\RedirectResponse
+     */
     protected function authenticated(Request $request, $user)
     {
         createMsg(1, 'Вы успешно авторизовались!');
+
+        $group_id = $user->group_id;
+
+        if ($group_id === 1) return redirect()->route('home');
+        else if ($group_id === 2) return redirect()->route('engineer.index');
     }
 
 

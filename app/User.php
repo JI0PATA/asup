@@ -23,13 +23,4 @@ class User extends Authenticatable
     ];
 
     protected $rememberTokenName = false;
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password',
-    ];
 }

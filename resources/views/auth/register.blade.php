@@ -17,6 +17,12 @@
             nav {
                 display: none !important;
             }
+            .wp {
+                width: 100%;
+            }
+            main .wp {
+                width: 1200px;
+            }
         </style>
     @endpush
     <main style="background-image: url('{{ asset('img/asup/bg.png') }}');">

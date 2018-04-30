@@ -36,3 +36,33 @@
 	}
 }
 /************* /ВСПЛЫВАЮЩЕЕ УВЕДОМЛЕНИЕ ************/
+
+/************* ГОРИЗОНТАЛЬНЫЕ КАРТОЧКИ *************/
+.horizontal-card {
+	width: 100%;
+	border: 1px solid #ddd;
+	padding: 20px;
+	border-radius: 10px;
+	transition: border-color .4s;
+	margin-bottom: 30px;
+}
+
+.horizontal-card .title {
+	font-size: 22px;
+	font-weight: bold;
+}
+
+.horizontal-card .text {
+	font-size: 18px;
+}
+
+.horizontal-card:hover {
+	border-color: var(--main-blue);
+}
+/************* /ГОРИЗОНТАЛЬНЫЕ КАРТОЧКИ ************/
+
+/************* ТАБЛИЦЫ *************/
+td {
+	vertical-align: middle;
+}
+/************* /ТАБЛИЦЫ ************/

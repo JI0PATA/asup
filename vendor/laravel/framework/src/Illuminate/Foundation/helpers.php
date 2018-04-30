@@ -998,3 +998,7 @@ function createMsg($status, $msg) {
 
     session()->flash('popupMsg', ['msg' => $msg, 'class' => $class]);
 }
+
+function format_date($str_date) {
+    return date('d/m/Y H:i', strtotime($str_date));
+}

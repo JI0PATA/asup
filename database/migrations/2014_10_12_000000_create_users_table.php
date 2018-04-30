@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('position');
 
             $table->integer('group_id')->unsigned();
-            $table->foreign('group_id')->references('id')->on('groups');
+            $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade');
         });
     }
 

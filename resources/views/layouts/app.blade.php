@@ -47,18 +47,36 @@
                         <li><a class="nav-link" href="{{ route('login') }}">{{ __('Логин') }}</a></li>
                         <li><a class="nav-link" href="{{ route('register') }}">{{ __('Регистрация') }}</a></li>
                     @else
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                               aria-expanded="false" v-pre>
-                                Оставить заявку
-                            </a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                               aria-expanded="false" v-pre>
-                                Мои заявки
-                            </a>
-                        </li>
+                        @if(Auth::user()->group_id === 2)
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="{{ route('engineer.index') }}" role="button" aria-haspopup="true"
+                                   aria-expanded="false" v-pre>
+                                    <?php
+                                        $count = \App\Application::where('level', '<>', 0)->where('accept_user_id', null)->count();
+                                    ?>
+                                    Все заявки {!! $count !== 0 ? '<span class="badge badge-pill badge-secondary">'.$count.'</span>' : ''!!}
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="{{ route('engineer.application.my') }}" role="button" aria-haspopup="true"
+                                   aria-expanded="false" v-pre>
+                                    Мои заявки
+                                </a>
+                            </li>
+                        @else
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="{{ route('user.newApplication') }}" role="button" aria-haspopup="true"
+                                   aria-expanded="false" v-pre>
+                                    Оставить заявку
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="{{ route('home') }}" role="button" aria-haspopup="true"
+                                   aria-expanded="false" v-pre>
+                                    Мои заявки
+                                </a>
+                            </li>
+                        @endif
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -66,6 +84,9 @@
                             </a>
 
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ Auth::user()->group_id === 1 ? route('user.profile') : route('engineer.profile') }}">
+                                    {{ __('Личные данные') }}
+                                </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -84,7 +105,7 @@
         </div>
     </nav>
 
-    <main class="py-4">
+    <main class="py-4 wp">
         @yield('content')
     </main>
 </div>

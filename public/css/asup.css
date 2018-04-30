@@ -7,6 +7,10 @@
     src: url("../fonts/mech.ttf");
 }
 
+:root{
+    --main-blue: #0063A5;
+}
+
 .wp {
     width: 1200px;
     margin: 0 auto;
