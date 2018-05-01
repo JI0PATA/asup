@@ -34,6 +34,11 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Войти') }}
                                 </button>
+                                <a href="{{ route('resetPassword') }}">
+                                    <button type="button" class="btn btn-primary">
+                                        {{ __('Восстановить пароль') }}
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     </form>

@@ -9,9 +9,16 @@ use Illuminate\Support\Facades\Auth;
 
 class MainController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $applications = Application::orderBy('id', 'DESC')->get();
+        $applications = Application::orderBy('id', 'DESC');
+
+        if ($request->get('filter') === 'not-accept')
+            $applications->where('accept_user_id', null);
+        elseif ($request->get('filter') === 'complete')
+            $applications->where('completed_at', '<>', null);
+
+        $applications = $applications->get();
 
         return view('engineer.index', [
             'applications' => $applications

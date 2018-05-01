@@ -1,11 +1,26 @@
 {{ config(['app.name' => 'Все заявки']) }}
 
+@if(\Request::get('filter') === 'not-accept') {{ config(['app.name' => 'Непринятые заявки']) }}
+@elseif(\Request::get('filter') === 'complete') {{ config(['app.name' => 'Выполненные заявки']) }}
+@endif
+
 @extends('layouts.app')
 
 @section('content')
     @if($applications->isEmpty())
         <h2>Нет заявок</h2>
     @else
+        <div class="wp">
+            <a href="{{ route('engineer.index') }}">
+                <button type="button" class="btn btn-primary">Все заявки</button>
+            </a>
+            <a href="{{ route('engineer.index', ['filter' => 'not-accept']) }}">
+                <button type="button" class="btn btn-warning">Непринятые заявки</button>
+            </a>
+            <a href="{{ route('engineer.index', ['filter' => 'complete']) }}">
+                <button type="button" class="btn btn-success">Выполненные заявки</button>
+            </a>
+        </div><br>
         <table class="table">
             <thead>
             <tr>

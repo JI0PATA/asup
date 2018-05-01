@@ -16,6 +16,9 @@ Auth::routes();
 Route::post('register', 'Auth\RegisterController@create')->name('register');
 Route::post('login', 'Auth\LoginController@login')->name('login')->middleware('AdminLogin');
 
+Route::get('resetPassword', 'Auth\ResetPassword@view')->name('resetPassword')->middleware('guest');
+Route::post('resetPassword', 'Auth\ResetPassword@reset')->name('resetPassword')->middleware('guest');
+
 Route::prefix('admin')->middleware('AdminPanel')->group(function() {
     Route::post('logout', 'Admin\AdminController@logout')->name('admin.logout');
 
