@@ -11,7 +11,7 @@ class MainController extends Controller
 {
     public function index(Request $request)
     {
-        $applications = Application::orderBy('id', 'DESC');
+        $applications = Application::orderBy('id', 'DESC')->where('level', '<>', 0);
 
         if ($request->get('filter') === 'not-accept')
             $applications->where('accept_user_id', null);
