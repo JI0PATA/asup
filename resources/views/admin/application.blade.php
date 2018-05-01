@@ -17,6 +17,7 @@
     @endpush
 
     <p class="title font-weight-bold">Аудитория: {{ $application['place'] }}</p>
+    <p class="title">Номер телефона: <b>{{ $application['call'] }}</b></p>
     <p class="title">Оборудование: {{ $application['equipment'] }}</p>
     <p class="title">Комментарий:<br>
         {!! nl2br($application['comment']) !!}

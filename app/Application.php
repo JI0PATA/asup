@@ -12,6 +12,7 @@ class Application extends Model
         'place',
         'equipment',
         'comment',
+        'call',
         'create_user_id',
         'created_at',
         'level'

@@ -30,6 +30,7 @@ class ApplicationController extends Controller
             'place' => $request->place,
             'equipment' => $request->equipment,
             'comment' => $request->comment,
+            'call' => $request->call,
             'create_user_id' => Auth::id(),
             'created_at' => now()
         ]);

@@ -18,6 +18,7 @@ class CreateApplicationsTable extends Migration
             $table->string('place');
             $table->string('equipment');
             $table->text('comment')->nullable();
+            $table->string('call');
             $table->integer('level')->default(0);
 
             $table->integer('create_user_id')->unsigned();

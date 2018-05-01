@@ -52,14 +52,19 @@ class RegisterController extends Controller
 
         if ($request['key'] !== 'ktits2018') return createMsg(0, 'Неверный код!');
 
-        User::create([
-            'login' => $request['login'],
-            'password' => Hash::make($request['password']),
-            'email' => $request['email'],
-            'name' => $request['name'],
-            'position' => $request['position'],
-            'group_id' => $request['group_id'],
-        ]);
+        try {
+            User::create([
+                'login' => $request['login'],
+                'password' => Hash::make($request['password']),
+                'email' => $request['email'],
+                'name' => $request['name'],
+                'position' => $request['position'],
+                'group_id' => $request['group_id'],
+            ]);
+        } catch (\Exception $exception) {
+            createMsg(0, 'Регистрация не завершена. Возможно, такой логин или e-mail уже существуют');
+            return back();
+        }
 
         createMsg(1, 'Вы успешно зарегистрированы!', route('login'));
         return redirect()->route('login');

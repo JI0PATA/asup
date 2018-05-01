@@ -15,7 +15,15 @@
                 <input type="text" name="place" class="form-control" id="place" placeholder="Номер аудитории" required>
             </div>
         </div>
-        @include('templates.equipment')
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                @include('templates.equipment')
+            </div>
+            <div class="form-group col-md-6">
+                <label for="call">Номер телефона</label>
+                <input type="text" name="call" class="form-control" id="call" placeholder="Номер телефона" required>
+            </div>
+        </div>
         <div class="form-group">
             <label for="comment">Комментарий</label>
             <textarea class="form-control" name="comment" id="comment" rows="6"></textarea>

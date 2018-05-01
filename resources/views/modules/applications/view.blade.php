@@ -17,7 +17,15 @@
                        value="{{ $application['place'] }}" required readonly>
             </div>
         </div>
-        @include('templates.equipment', ['disabled' => true, 'equipment' => $application['equipment']])
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                @include('templates.equipment', ['disabled' => true, 'equipment' => $application['equipment']])
+            </div>
+            <div class="form-group col-md-6">
+                <label for="call">Номер телефона</label>
+                <input type="text" name="call" value="{{ $application['call'] }}" class="form-control" id="call" placeholder="Номер телефона" readonly required>
+            </div>
+        </div>
         <div class="form-group">
             <label for="comment">Комментарий</label>
             <textarea class="form-control" id="comment" rows="6" readonly>{{ $application['comment'] }}</textarea>
