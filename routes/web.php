@@ -41,6 +41,7 @@ Route::prefix('admin')->middleware('AdminPanel')->group(function() {
 
     Route::get('/users', 'Admin\AdminController@getUsers')->name('admin.users');
     Route::get('/application/{id}', 'ApplicationController@getApplication')->name('admin.application.view');
+    Route::get('/application/delete/{id}', 'ApplicationController@deleteApplication')->name('admin.application.delete');
 
 });
 

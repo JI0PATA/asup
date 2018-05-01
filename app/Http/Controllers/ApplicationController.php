@@ -77,4 +77,14 @@ class ApplicationController extends Controller
             'application' => $application,
         ]);
     }
+
+    public function deleteApplication($id)
+    {
+        $application = Application::find($id);
+
+        $application->delete();
+
+        createMsg(1, 'Заявка удалена');
+        return back();
+    }
 }

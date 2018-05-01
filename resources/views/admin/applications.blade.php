@@ -32,9 +32,12 @@
                     <td>{{ $application['accept_user_id'] === null ? 'Ожидается' : ($application['completed_at'] === null ? 'Выполняется' : 'Выполнено')}}</td>
                     <td>{{ $application['accept_user_id'] === null ? '-' : $application['engineer']['name'] }}</td>
                     <td>
-                            <a href="{{ route('admin.application.view', ['id' => $application['id']]) }}">
-                                <button type="button" class="btn btn-primary">Открыть</button>
-                            </a>
+                        <a href="{{ route('admin.application.view', ['id' => $application['id']]) }}">
+                            <button type="button" class="btn btn-primary">Открыть</button>
+                        </a>
+                        <a href="#" onclick="if(confirm('Вы уверены?')) location.href='{{ route('admin.application.delete', ['id' => $application['id']]) }}'">
+                            <button type="button" class="btn btn-danger">Удалить</button>
+                        </a>
                     </td>
                 </tr>
             @endforeach

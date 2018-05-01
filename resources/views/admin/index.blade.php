@@ -30,6 +30,9 @@
                         <a href="{{ route('admin.application.view.level', ['id' => $application['id']]) }}">
                             <button type="button" class="btn btn-primary">Открыть</button>
                         </a>
+                        <a href="#" onclick="if(confirm('Вы уверены?')) location.href='{{ route('admin.application.delete', ['id' => $application['id']]) }}'">
+                            <button type="button" class="btn btn-danger">Удалить</button>
+                        </a>
                     </td>
                 </tr>
             @endforeach
