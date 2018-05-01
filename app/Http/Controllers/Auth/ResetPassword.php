@@ -18,6 +18,11 @@ class ResetPassword extends Controller
     {
         $user = User::where('email', $request->email)->first();
 
+        if (!$user) {
+            createMsg(0, 'Такого пользователя не существует');
+            return back();
+        }
+
         $newPassword = random_int(10000, 99999);
 
         $user->password = Hash::make($newPassword);
