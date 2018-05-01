@@ -33,7 +33,7 @@
     @if(Auth::check())
         @if($application['completed_at'] !== null)
             <p class="title">
-                Завершено: {{ $application['completed_at'] }}
+                Завершено: {{ format_date($application['completed_at']) }}
             </p>
         @endif
         @if($application['accept_user_id'] === null)
