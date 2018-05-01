@@ -24,7 +24,7 @@ Route::prefix('admin')->middleware('AdminPanel')->group(function() {
 
     Route::get('/', 'ApplicationController@newApplications')->name('admin.index');
 
-    Route::get('/application/{id}', 'ApplicationController@view')->name('admin.application.view');
+    Route::get('/application/{id}', 'ApplicationController@view')->name('admin.application.view.level');
     Route::post('/application/{id}', 'ApplicationController@updateApplication')->name('admin.updateApplication');
 
     Route::get('/applications', 'ApplicationController@getApplications')->name('admin.applications');

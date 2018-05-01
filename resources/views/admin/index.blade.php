@@ -27,7 +27,7 @@
                     <td>{{ $application['equipment'] }}</td>
                     <td>{{ format_date($application['created_at']) }}</td>
                     <td>
-                        <a href="{{ route('admin.application.view', ['id' => $application['id']]) }}">
+                        <a href="{{ route('admin.application.view.level', ['id' => $application['id']]) }}">
                             <button type="button" class="btn btn-primary">Открыть</button>
                         </a>
                     </td>
