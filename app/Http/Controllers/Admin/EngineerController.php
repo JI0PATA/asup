@@ -24,14 +24,19 @@ class EngineerController extends Controller
 
     public function create(Request $request)
     {
-        User::create([
-            'login' => $request->login,
-            'password' => Hash::make($request->password),
-            'email' => $request->email,
-            'name' => $request->name,
-            'position' => $request->position,
-            'group_id' => 2
-        ]);
+        try {
+            User::create([
+                'login' => $request->login,
+                'password' => Hash::make($request->password),
+                'email' => $request->email,
+                'name' => $request->name,
+                'position' => $request->position,
+                'group_id' => 2
+            ]);
+        } catch(\Exception $exception) {
+            createMsg(0, 'Регистрация не завершена. Такой e-mail или логин уже существует');
+            return back();
+        }
 
         createMsg(1, 'Инженер успешно добавлен');
         return redirect()->route('admin.engineers');

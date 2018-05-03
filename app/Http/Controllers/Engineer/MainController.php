@@ -30,7 +30,9 @@ class MainController extends Controller
         $application = Application::find($id);
 
         $application->accept_user_id = Auth::id();
-        $application->accepted_at = now();
+
+        if ($application->accepted_at === null)
+            $application->accepted_at = now();
 
         $application->update();
 
@@ -40,12 +42,15 @@ class MainController extends Controller
 
     public function complete($id)
     {
-        $application = Application::find($id);
+        $application = Application::with('user')->find($id);
 
         $application->completed_at = now();
         $application->update();
 
         createMsg(1, 'Вы завершили задачу');
+
+        mail($application->user->email, 'Заявка в АСУП', 'Ваша задача: "'.$application->place.' '.$application->equipment.'" выполнена!');
+
         return redirect()->back();
     }
 
@@ -67,6 +72,7 @@ class MainController extends Controller
 
         $application->accept_user_id = null;
         $application->accepted_at = null;
+        $application->completed_at = null;
 
         $application->update();
 

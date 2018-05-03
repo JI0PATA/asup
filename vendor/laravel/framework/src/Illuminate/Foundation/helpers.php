@@ -1000,5 +1000,8 @@ function createMsg($status, $msg) {
 }
 
 function format_date($str_date) {
-    return date('d/m/Y H:i', strtotime($str_date));
+    if ($str_date === null) {
+        return '-';
+    } else
+        return date('d/m/Y H:i', strtotime($str_date));
 }

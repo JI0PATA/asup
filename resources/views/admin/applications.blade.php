@@ -13,7 +13,8 @@
                 <th>ФИО</th>
                 <th>№ ауд.</th>
                 <th>Оборудование</th>
-                <th>Время отправки</th>
+                <th>Время принятия</th>
+                <th>Время завершения</th>
                 <th>Сложность</th>
                 <th>Статус</th>
                 <th>Техник</th>
@@ -27,7 +28,8 @@
                     <td>{{ $application['user']['name'] }}</td>
                     <td>{{ $application['place'] }}</td>
                     <td>{{ $application['equipment'] }}</td>
-                    <td>{{ format_date($application['created_at']) }}</td>
+                    <td>{{ format_date($application['accepted_at']) }}</td>
+                    <td>{{ format_date($application['completed_at']) }}</td>
                     <td>{{ $application['level'] }} уровень</td>
                     <td>{{ $application['accept_user_id'] === null ? 'Ожидается' : ($application['completed_at'] === null ? 'Выполняется' : 'Выполнено')}}</td>
                     <td>{{ $application['accept_user_id'] === null ? '-' : $application['engineer']['name'] }}</td>
