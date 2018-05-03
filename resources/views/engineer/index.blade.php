@@ -64,7 +64,7 @@
                             <a href="#" onclick="if(confirm('Вы уверены?')) location.href='{{ route('engineer.application.resume', ['id' => $application['id']]) }}'">
                                 <button type="button" class="btn btn-warning">Возобновить</button>
                             </a>
-                        @else
+                        @elseif($application['completed_at'] === null)
                             <a href="#" onclick="if(confirm('Вы уверены?')) location.href='{{ route('engineer.application.accept', ['id' => $application['id']]) }}'">
                                 <button type="button" class="btn btn-danger">Перепринять</button>
                             </a>
