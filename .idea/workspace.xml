@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="482ca8ce-5495-4b12-90f6-89f3249c8ab0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/application.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/application.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/engineer/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/engineer/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/engineer/myApplication.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/engineer/myApplication.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPassword.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -87,23 +85,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="MainController.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Engineer/MainController.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="484">
-                  <caret line="74" column="42" selection-start-line="74" selection-start-column="42" selection-end-line="74" selection-end-column="42" />
-                  <folding>
-                    <element signature="e#49#69#0#PHP" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ResetPassword.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="ResetPassword.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPassword.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="504">
-                  <caret line="31" column="87" selection-start-line="31" selection-start-column="87" selection-end-line="31" selection-end-column="87" />
+                  <caret line="31" column="121" selection-start-line="31" selection-start-column="121" selection-end-line="31" selection-end-column="121" />
                 </state>
               </provider>
             </entry>
@@ -169,11 +155,11 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/EngineerController.php" />
         <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/applications.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPassword.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Engineer/MainController.php" />
         <option value="$PROJECT_DIR$/resources/views/engineer/myApplication.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/engineer/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/application.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPassword.php" />
       </list>
     </option>
   </component>
@@ -415,12 +401,12 @@
       <workItem from="1524980186636" duration="2140000" />
       <workItem from="1524984948158" duration="51162000" />
       <workItem from="1525238641461" duration="1203000" />
-      <workItem from="1525350718446" duration="3048000" />
+      <workItem from="1525350718446" duration="3213000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76011000" />
+    <option name="totallyTimeSpent" value="76176000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1066" extended-state="6" />
@@ -654,13 +640,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="43" column="120" selection-start-line="43" selection-start-column="120" selection-end-line="43" selection-end-column="120" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2018_04_30_120254_create_applications_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -767,13 +746,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPassword.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="31" column="87" selection-start-line="31" selection-start-column="87" selection-end-line="31" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Engineer/MainController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="484">
@@ -809,6 +781,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="54" column="54" lean-forward="true" selection-start-line="54" selection-start-column="54" selection-end-line="54" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="43" column="120" selection-start-line="43" selection-start-column="120" selection-end-line="43" selection-end-column="120" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPassword.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="31" column="121" selection-start-line="31" selection-start-column="121" selection-end-line="31" selection-end-column="121" />
         </state>
       </provider>
     </entry>

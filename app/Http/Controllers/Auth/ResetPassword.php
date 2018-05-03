@@ -29,7 +29,7 @@ class ResetPassword extends Controller
 
         $user->update();
 
-        mail($request->email, 'Восстановление пароля', 'Ваш логин: '.$user->login.'/n/rВаш новый пароль: '.$newPassword.'/n/rВы можете сменить пароль в Личном кабинете');
+        mail($request->email, 'Восстановление пароля', 'Ваш логин: '.$user->login.'\nВаш новый пароль: '.$newPassword.'\nВы можете сменить пароль в Личном кабинете');
         createMsg(1, 'Новый пароль выслан на почту');
         return redirect()->route('login');
     }
