@@ -62,7 +62,17 @@ class Application extends Model
             }
         });
 
-        $avg_time = $applications->avg('time');
+        $complete_time = 0;
+        $complete_count = 0;
+
+        foreach($applications as $application) {
+            if ($application->time !== null) {
+                $complete_time += $application->time;
+                $complete_count++;
+            }
+        }
+
+        $avg_time = $complete_time / $complete_count;
 
         return [
             'applications' => $applications,
