@@ -74,6 +74,8 @@ class Application extends Model
 
         if ($request->get('filter') !== 'not-accept')
             $avg_time = $complete_time / $complete_count;
+        else
+            $avg_time = '-';
 
         return [
             'applications' => $applications,
