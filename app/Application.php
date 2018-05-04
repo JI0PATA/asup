@@ -52,12 +52,14 @@ class Application extends Model
         $applications = $applications->get();
 
         $applications->map(function($item) {
-            $d1 = new DateTime($item['accepted_at']);
-            $d2 = new DateTime($item['completed_at']);
+            if ($item['accepted_at'] !== null && $item['completed_at'] !== null) {
+                $d1 = new DateTime($item['accepted_at']);
+                $d2 = new DateTime($item['completed_at']);
 
-            $diff = $d2->diff($d1);
-            $item['time'] = $diff->format('%h') * 60 + $diff->format('%i');
-            return $item;
+                $diff = $d2->diff($d1);
+                $item['time'] = $diff->format('%h') * 60 + $diff->format('%i');
+                return $item;
+            }
         });
 
         $avg_time = $applications->avg('time');

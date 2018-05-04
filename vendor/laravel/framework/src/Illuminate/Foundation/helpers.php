@@ -1011,8 +1011,10 @@ function format_date($str_date, $format_date = null)
 
 function calc_time($time)
 {
+    if ($time === null) return '-';
+
     $hours = floor($time / 60);
     $mintes = $time - $hours * 60;
 
-    return $hours.':'.$mintes;
+    return floor($hours).':'.floor($mintes);
 }

@@ -118,7 +118,7 @@ class ApplicationController extends Controller
             'Время выполнения'
         ];
 
-        $handle = fopen(storage_path('app\excel\excel.csv'), 'w');
+        $handle = fopen(storage_path('app/excel/excel.csv'), 'w');
 
         fputcsv($handle, $csv, ';');
 

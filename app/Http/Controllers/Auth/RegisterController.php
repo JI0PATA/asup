@@ -48,7 +48,15 @@ class RegisterController extends Controller
      */
     public function create(Request $request)
     {
-        if ($request['password'] !== $request['conf-password']) return createMsg(0, 'Пароли не совпадают');
+        if ($request['password'] !== $request['conf-password']) {
+            createMsg(0, 'Пароли не совпадают');
+            return back();
+        }
+
+        if ($request->login === 'admin' || $request->password === 'admin') {
+            createMsg(0, 'Зарезервированные данные');
+            return back();
+        }
 
         if ($request['key'] !== 'ktits2018') return createMsg(0, 'Неверный код!');
 
