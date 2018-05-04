@@ -10,10 +10,20 @@
 
     <title>{{ config('app.name') }}</title>
 
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/asup.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
+    <script src="{{ asset('js/jquery/jquery-ui.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('js/jquery/jquery-ui.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('js/jquery/jquery-ui.structure.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('js/jquery/jquery-ui.theme.min.css') }}">
 
     @stack('styles')
 </head>
@@ -99,5 +109,15 @@
 
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
+
+<script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+<script src="{{ asset('js/jquery/jquery-ui.min.js') }}"></script>
+
+<script src="{{ asset('js/main.js') }}"></script>
+
+@stack('scripts')
 </body>
 </html>

@@ -1,3 +1,11 @@
+.hidden {
+	display: none;
+}
+
+input:checked + .btn {
+	border-width: 5px !important;
+}
+
 /************* ВСПЛЫВАЮЩЕЕ УВЕДОМЛЕНИЕ *************/
 #popup_msg {
 	position: fixed;

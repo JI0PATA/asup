@@ -7,19 +7,12 @@
 @extends('layouts.app')
 
 @section('content')
+    @include('templates.filter')
     @if($applications->isEmpty())
         <h2>Нет заявок</h2>
     @else
-        <div class="wp">
-            <a href="{{ route('engineer.index') }}">
-                <button type="button" class="btn btn-primary">Все заявки</button>
-            </a>
-            <a href="{{ route('engineer.index', ['filter' => 'not-accept']) }}">
-                <button type="button" class="btn btn-warning">Непринятые заявки</button>
-            </a>
-            <a href="{{ route('engineer.index', ['filter' => 'complete']) }}">
-                <button type="button" class="btn btn-success">Выполненные заявки</button>
-            </a>
+        <div>
+            Среднее время выполнения: {{ calc_time($avg_time) }}
         </div><br>
         <table class="table">
             <thead>
@@ -53,19 +46,23 @@
                             <button type="button" class="btn btn-primary">Открыть</button>
                         </a>
                         @if($application['accept_user_id'] === null)
-                            <a href="#" onclick="if(confirm('Вы уверены?')) location.href='{{ route('engineer.application.accept', ['id' => $application['id']]) }}'">
+                            <a href="#"
+                               onclick="if(confirm('Вы уверены?')) location.href='{{ route('engineer.application.accept', ['id' => $application['id']]) }}'">
                                 <button type="button" class="btn btn-primary">Принять</button>
                             </a>
                         @elseif($application['accept_user_id'] === Auth::id() && $application['accept_user_id'] !== null && $application['completed_at'] === null)
-                            <a href="#" onclick="if(confirm('Вы уверены?')) location.href='{{ route('engineer.application.complete', ['id' => $application['id']]) }}'">
+                            <a href="#"
+                               onclick="if(confirm('Вы уверены?')) location.href='{{ route('engineer.application.complete', ['id' => $application['id']]) }}'">
                                 <button type="button" class="btn btn-success">Завершить</button>
                             </a>
                         @elseif($application['accept_user_id'] === Auth::id() && $application['completed_at'] !== null)
-                            <a href="#" onclick="if(confirm('Вы уверены?')) location.href='{{ route('engineer.application.resume', ['id' => $application['id']]) }}'">
+                            <a href="#"
+                               onclick="if(confirm('Вы уверены?')) location.href='{{ route('engineer.application.resume', ['id' => $application['id']]) }}'">
                                 <button type="button" class="btn btn-warning">Возобновить</button>
                             </a>
                         @elseif($application['completed_at'] === null)
-                            <a href="#" onclick="if(confirm('Вы уверены?')) location.href='{{ route('engineer.application.accept', ['id' => $application['id']]) }}'">
+                            <a href="#"
+                               onclick="if(confirm('Вы уверены?')) location.href='{{ route('engineer.application.accept', ['id' => $application['id']]) }}'">
                                 <button type="button" class="btn btn-danger">Перепринять</button>
                             </a>
                         @endif

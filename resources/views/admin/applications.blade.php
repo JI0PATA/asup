@@ -3,9 +3,17 @@
 @extends('layouts.admin')
 
 @section('content')
+    @include('templates.filter')
     @if($applications->isEmpty())
         <h2>Нет заявок</h2>
     @else
+        <div>
+            Среднее время выполнения: {{ calc_time($avg_time) }}
+        </div>
+        <div>
+            <button class="btn btn-primary" id="button__download_excel">Скачать в Excel</button>
+            <a href="{{ url('storage/app/excel/excel.csv') }}" download id="link__download_excel"></a>
+        </div><br>
         <table class="table">
             <thead>
             <tr>
@@ -31,7 +39,7 @@
                     <td>{{ format_date($application['accepted_at']) }}</td>
                     <td>{{ format_date($application['completed_at']) }}</td>
                     <td>{{ $application['level'] }} уровень</td>
-                    <td>{{ $application['accept_user_id'] === null ? 'Ожидается' : ($application['completed_at'] === null ? 'Выполняется' : 'Выполнено')}}</td>
+                    <td>{{ $application['accept_user_id'] === null ? 'Ожидается' : ($application['completed_at'] === null ? 'Выполняется' : 'Выполнено') }}</td>
                     <td>{{ $application['accept_user_id'] === null ? '-' : $application['engineer']['name'] }}</td>
                     <td>
                         <a href="{{ route('admin.application.view', ['id' => $application['id']]) }}">

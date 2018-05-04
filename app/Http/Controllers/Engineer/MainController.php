@@ -11,17 +11,12 @@ class MainController extends Controller
 {
     public function index(Request $request)
     {
-        $applications = Application::orderBy('id', 'DESC')->where('level', '<>', 0);
+        $filterApplications = (new \App\Application)->filterApplications($request);
 
-        if ($request->get('filter') === 'not-accept')
-            $applications->where('accept_user_id', null);
-        elseif ($request->get('filter') === 'complete')
-            $applications->where('completed_at', '<>', null);
-
-        $applications = $applications->get();
 
         return view('engineer.index', [
-            'applications' => $applications
+            'applications' => $filterApplications['applications'],
+            'avg_time' => $filterApplications['avg_time']
         ]);
     }
 

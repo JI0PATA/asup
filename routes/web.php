@@ -19,6 +19,8 @@ Route::post('login', 'Auth\LoginController@login')->name('login')->middleware('A
 Route::get('resetPassword', 'Auth\ResetPassword@view')->name('resetPassword')->middleware('guest');
 Route::post('resetPassword', 'Auth\ResetPassword@reset')->name('resetPassword')->middleware('guest');
 
+Route::get('downloadTableExcel', 'ApplicationController@downloadExcel')->name('downloadExcel');
+
 Route::prefix('admin')->middleware('AdminPanel')->group(function() {
     Route::post('logout', 'Admin\AdminController@logout')->name('admin.logout');
 
