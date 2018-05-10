@@ -101,21 +101,21 @@ class ApplicationController extends Controller
 
         $csv = [
             '№',
-            '#Номер аудитории',
-            '#Оборудование',
-            '#Комментарий',
-            '#Телефон',
+            'Номер аудитории',
+            'Оборудование',
+            'Комментарий',
+            'Телефон',
             '',
-            '#ФИО',
-            '#E-mail',
+            'ФИО',
+            'E-mail',
             '',
-            '#Сложность',
-            '#Статус',
-            '#Техник',
-            '#Время создания',
-            '#Время принятия',
-            '#Время завершения',
-            '#Время выполнения'
+            'Сложность',
+            'Статус',
+            'Техник',
+            'Время создания',
+            'Время принятия',
+            'Время завершения',
+            'Время выполнения'
         ];
 
         $handle = fopen(storage_path('app/excel/excel.csv'), 'w');
@@ -125,22 +125,22 @@ class ApplicationController extends Controller
         foreach ($applications as $application) {
 
             $list = [
-                $application->id,
-                $application->place,
-                $application->equipment,
-                $application->comment,
+                '="'.$application->id,
+                '="'.$application->place,
+                '="'.$application->equipment,
+                '="'.$application->comment,
                 '="'.$application->call.'"',
                 '',
-                $application->user->name,
-                $application->user->email,
+                '="'.$application->user->name,
+                '="'.$application->user->email,
                 '',
-                $application->level.' уровень',
-                $application['accept_user_id'] === null ? 'Ожидается' : ($application['completed_at'] === null ? 'Выполняется' : 'Выполнено'),
-                $application['accept_user_id'] === null ? '-' : $application['engineer']['name'],
-                format_date($application->created_at),
-                format_date($application->accepted_at),
-                format_date($application->completed_at),
-                calc_time($application->time)
+                '="'.$application->level.' уровень',
+                '="'.$application['accept_user_id'] === null ? 'Ожидается' : ($application['completed_at'] === null ? 'Выполняется' : 'Выполнено'),
+                '="'.$application['accept_user_id'] === null ? '-' : $application['engineer']['name'],
+                '="'.format_date($application->created_at),
+                '="'.format_date($application->accepted_at),
+                '="'.format_date($application->completed_at),
+                '="'.calc_time($application->time)
             ];
 
             fputcsv($handle, $list, ';');
