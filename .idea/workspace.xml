@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="482ca8ce-5495-4b12-90f6-89f3249c8ab0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Application.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Application.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApplicationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApplicationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/applications.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/applications.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,20 +36,20 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="applications.blade.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="applications.blade.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/resources/views/admin/applications.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+                <state>
+                  <caret column="27" selection-start-column="27" selection-end-column="27" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="filter.blade.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="filter.blade.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/resources/views/templates/filter.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="432">
-                  <caret line="25" column="122" selection-start-line="25" selection-start-column="122" selection-end-line="25" selection-end-column="122" />
+                <state relative-caret-position="54">
+                  <caret line="3" column="62" lean-forward="true" selection-start-line="3" selection-start-column="62" selection-end-line="3" selection-end-column="62" />
                 </state>
               </provider>
             </entry>
@@ -86,11 +85,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ApplicationController.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="ApplicationController.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApplicationController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="720">
-                  <caret line="117" column="14" selection-start-line="117" selection-start-column="14" selection-end-line="117" selection-end-column="14" />
+                <state relative-caret-position="1316">
+                  <caret line="127" column="21" selection-start-line="127" selection-start-column="21" selection-end-line="127" selection-end-column="21" />
                   <folding>
                     <element signature="e#40#60#0#PHP" expanded="true" />
                   </folding>
@@ -98,7 +97,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Application.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Application.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Application.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="650">
@@ -177,15 +176,15 @@
         <option value="$PROJECT_DIR$/resources/views/engineer/index.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/public/js/main.js" />
-        <option value="$PROJECT_DIR$/resources/views/admin/applications.blade.php" />
         <option value="$PROJECT_DIR$/public/js/jquery/jquery.min.js" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" />
         <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
         <option value="$PROJECT_DIR$/resources/views/templates/filter.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ApplicationController.php" />
         <option value="$PROJECT_DIR$/app/Application.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ApplicationController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/applications.blade.php" />
       </list>
     </option>
   </component>
@@ -473,12 +472,12 @@
       <workItem from="1525238641461" duration="1203000" />
       <workItem from="1525350718446" duration="21221000" />
       <workItem from="1525420024603" duration="3726000" />
-      <workItem from="1525952250015" duration="2262000" />
+      <workItem from="1525952250015" duration="2541000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100172000" />
+    <option name="totallyTimeSpent" value="100451000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1066" extended-state="6" />
@@ -845,30 +844,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/applications.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/templates/filter.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="25" column="122" selection-start-line="25" selection-start-column="122" selection-end-line="25" selection-end-column="122" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApplicationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="117" column="14" selection-start-line="117" selection-start-column="14" selection-end-line="117" selection-end-column="14" />
-          <folding>
-            <element signature="e#40#60#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Application.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="650">
@@ -879,6 +854,30 @@
           <folding>
             <element signature="e#23#36#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApplicationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1316">
+          <caret line="127" column="21" selection-start-line="127" selection-start-column="21" selection-end-line="127" selection-end-column="21" />
+          <folding>
+            <element signature="e#40#60#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/templates/filter.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="62" lean-forward="true" selection-start-line="3" selection-start-column="62" selection-end-line="3" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/applications.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="27" selection-start-column="27" selection-end-column="27" />
         </state>
       </provider>
     </entry>

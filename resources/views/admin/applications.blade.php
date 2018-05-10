@@ -1,4 +1,4 @@
-{{ config(['app.name' => 'Необработанные заявки']) }}
+{{ config(['app.name' => 'Обработанные заявки']) }}
 
 @extends('layouts.admin')
 
