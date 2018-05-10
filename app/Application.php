@@ -33,16 +33,18 @@ class Application extends Model
 
     public function filterApplications(Request $request)
     {
-        $applications = Application::orderBy($request->date_filter, 'DESC')->where('level', '<>', 0);
+        $date_filter = $request->date_filter !== null ? $request->date_filter : 'created_at';
+
+        $applications = Application::orderBy($date_filter, 'DESC')->where('level', '<>', 0);
 
         if (!empty($request->date_from)) {
             if (!empty($request->date_to))
-                $applications->whereBetween($request->date_filter, [format_date($request->date_from, 'Y-m-d 00:00:00'), format_date($request->date_to, 'Y-m-d 23:59:59')]);
+                $applications->whereBetween($date_filter, [format_date($request->date_from, 'Y-m-d 00:00:00'), format_date($request->date_to, 'Y-m-d 23:59:59')]);
             else
-                $applications->whereBetween($request->date_filter, [format_date($request->date_from, 'Y-m-d 00:00:00'), now()]);
+                $applications->whereBetween($date_filter, [format_date($request->date_from, 'Y-m-d 00:00:00'), now()]);
         }
         elseif(!empty($request->date_to))
-            $applications->whereBetween($request->date_filter, [null, format_date($request->date_to, 'Y-m-d 23:59:59')]);
+            $applications->whereBetween($date_filter, [null, format_date($request->date_to, 'Y-m-d 23:59:59')]);
 
         if ($request->get('filter') === 'not-accept')
             $applications->where('accept_user_id', null);

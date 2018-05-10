@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="482ca8ce-5495-4b12-90f6-89f3249c8ab0" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/app/Application.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Application.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/templates/filter.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/templates/filter.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApplicationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApplicationController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -89,8 +89,8 @@
           <file leaf-file-name="ApplicationController.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApplicationController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="360">
-                  <caret line="97" column="64" lean-forward="true" selection-start-line="97" selection-start-column="64" selection-end-line="97" selection-end-column="64" />
+                <state relative-caret-position="720">
+                  <caret line="117" column="14" selection-start-line="117" selection-start-column="14" selection-end-line="117" selection-end-column="14" />
                   <folding>
                     <element signature="e#40#60#0#PHP" expanded="true" />
                   </folding>
@@ -101,8 +101,11 @@
           <file leaf-file-name="Application.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Application.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="347">
-                  <caret line="35" column="66" selection-start-line="35" selection-start-column="66" selection-end-line="35" selection-end-column="66" />
+                <state relative-caret-position="650">
+                  <caret line="37" column="92" lean-forward="true" selection-start-line="37" selection-start-column="92" selection-end-line="37" selection-end-column="92" />
+                  <caret line="41" column="162" lean-forward="true" selection-start-line="41" selection-start-column="162" selection-end-line="41" selection-end-column="162" />
+                  <caret line="43" column="119" lean-forward="true" selection-start-line="43" selection-start-column="119" selection-end-line="43" selection-end-column="119" />
+                  <caret line="46" column="112" lean-forward="true" selection-start-line="46" selection-start-column="112" selection-end-line="46" selection-end-column="112" />
                   <folding>
                     <element signature="e#23#36#0#PHP" expanded="true" />
                   </folding>
@@ -178,10 +181,10 @@
         <option value="$PROJECT_DIR$/public/js/jquery/jquery.min.js" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ApplicationController.php" />
         <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
         <option value="$PROJECT_DIR$/resources/views/templates/filter.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ApplicationController.php" />
         <option value="$PROJECT_DIR$/app/Application.php" />
       </list>
     </option>
@@ -470,12 +473,12 @@
       <workItem from="1525238641461" duration="1203000" />
       <workItem from="1525350718446" duration="21221000" />
       <workItem from="1525420024603" duration="3726000" />
-      <workItem from="1525952250015" duration="1495000" />
+      <workItem from="1525952250015" duration="2262000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99405000" />
+    <option name="totallyTimeSpent" value="100172000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1066" extended-state="6" />
@@ -849,16 +852,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApplicationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="97" column="64" lean-forward="true" selection-start-line="97" selection-start-column="64" selection-end-line="97" selection-end-column="64" />
-          <folding>
-            <element signature="e#40#60#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/templates/filter.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
@@ -866,10 +859,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApplicationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="117" column="14" selection-start-line="117" selection-start-column="14" selection-end-line="117" selection-end-column="14" />
+          <folding>
+            <element signature="e#40#60#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Application.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="35" column="66" selection-start-line="35" selection-start-column="66" selection-end-line="35" selection-end-column="66" />
+        <state relative-caret-position="650">
+          <caret line="37" column="92" lean-forward="true" selection-start-line="37" selection-start-column="92" selection-end-line="37" selection-end-column="92" />
+          <caret line="41" column="162" lean-forward="true" selection-start-line="41" selection-start-column="162" selection-end-line="41" selection-end-column="162" />
+          <caret line="43" column="119" lean-forward="true" selection-start-line="43" selection-start-column="119" selection-end-line="43" selection-end-column="119" />
+          <caret line="46" column="112" lean-forward="true" selection-start-line="46" selection-start-column="112" selection-end-line="46" selection-end-column="112" />
           <folding>
             <element signature="e#23#36#0#PHP" expanded="true" />
           </folding>
