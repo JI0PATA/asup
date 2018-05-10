@@ -23,15 +23,15 @@
     <br>
     <div>
         <input type="radio" id="date_filter__create" class="hidden" name="date_filter"
-               value="created_at" {{ \Request::get('date_filter') === null ? 'checked' : '' }}>
+               value="created_at" {{ \Request::get('date_filter') === null || \Request::get('date_filter') === 'created_at' ? 'checked' : '' }}>
         <label for="date_filter__create" class="btn btn-primary">Время создания</label>
 
         <input type="radio" id="date_filter__accept" class="hidden" name="date_filter"
-               value="accepted_at" {{ \Request::get('date_filter') === 'accept' ? 'checked' : '' }}>
+               value="accepted_at" {{ \Request::get('date_filter') === 'accepted_at' ? 'checked' : '' }}>
         <label for="date_filter__accept" class="btn btn-warning">Время принятия</label>
 
         <input type="radio" id="date_filter__complete" class="hidden" name="date_filter"
-               value="completed_at" {{ \Request::get('date_filter') === 'complete' ? 'checked' : '' }}>
+               value="completed_at" {{ \Request::get('date_filter') === 'completed_at' ? 'checked' : '' }}>
         <label for="date_filter__complete" class="btn btn-success">Время завершения</label>
     </div>
     <div>

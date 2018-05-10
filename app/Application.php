@@ -33,7 +33,7 @@ class Application extends Model
 
     public function filterApplications(Request $request)
     {
-        $applications = Application::orderBy('id', 'DESC')->where('level', '<>', 0);
+        $applications = Application::orderBy($request->date_filter, 'DESC')->where('level', '<>', 0);
 
         if (!empty($request->date_from)) {
             if (!empty($request->date_to))
