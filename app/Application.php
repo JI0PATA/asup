@@ -37,12 +37,12 @@ class Application extends Model
 
         if (!empty($request->date_from)) {
             if (!empty($request->date_to))
-                $applications->whereBetween('created_at', [format_date($request->date_from, 'Y-m-d 00:00:00'), format_date($request->date_to, 'Y-m-d 23:59:59')]);
+                $applications->whereBetween($request->date_filter, [format_date($request->date_from, 'Y-m-d 00:00:00'), format_date($request->date_to, 'Y-m-d 23:59:59')]);
             else
-                $applications->whereBetween('created_at', [format_date($request->date_from, 'Y-m-d 00:00:00'), now()]);
+                $applications->whereBetween($request->date_filter, [format_date($request->date_from, 'Y-m-d 00:00:00'), now()]);
         }
         elseif(!empty($request->date_to))
-            $applications->whereBetween('created_at', [null, format_date($request->date_to, 'Y-m-d 23:59:59')]);
+            $applications->whereBetween($request->date_filter, [null, format_date($request->date_to, 'Y-m-d 23:59:59')]);
 
         if ($request->get('filter') === 'not-accept')
             $applications->where('accept_user_id', null);
@@ -72,10 +72,10 @@ class Application extends Model
             }
         }
 
-        if ($request->get('filter') !== 'not-accept')
+        if ($request->get('filter') !== 'not-accept' && $complete_count > 0)
             $avg_time = $complete_time / $complete_count;
         else
-            $avg_time = '-';
+            $avg_time = null;
 
         return [
             'applications' => $applications,

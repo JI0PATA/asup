@@ -12,14 +12,30 @@
     </div>
     <div class="row">
         <div class="col">
-            <input type="text" name="date_from" class="form-control datepicker" placeholder="Дата от" value="{{ \Request::get('date_from') }}">
+            <input type="text" name="date_from" class="form-control datepicker" placeholder="Дата от"
+                   value="{{ \Request::get('date_from') }}">
         </div>
         <div class="col">
-            <input type="text" name="date_to" class="form-control datepicker" placeholder="Дата до" value="{{ \Request::get('date_to') }}">
+            <input type="text" name="date_to" class="form-control datepicker" placeholder="Дата до"
+                   value="{{ \Request::get('date_to') }}">
         </div>
-        <div class="col">
-            <button type="submit" class="btn btn-primary">Показать</button>
-        </div>
+    </div>
+    <br>
+    <div>
+        <input type="radio" id="date_filter__create" class="hidden" name="date_filter"
+               value="created_at" {{ \Request::get('date_filter') === null ? 'checked' : '' }}>
+        <label for="date_filter__create" class="btn btn-primary">Время создания</label>
+
+        <input type="radio" id="date_filter__accept" class="hidden" name="date_filter"
+               value="accepted_at" {{ \Request::get('date_filter') === 'accept' ? 'checked' : '' }}>
+        <label for="date_filter__accept" class="btn btn-warning">Время принятия</label>
+
+        <input type="radio" id="date_filter__complete" class="hidden" name="date_filter"
+               value="completed_at" {{ \Request::get('date_filter') === 'complete' ? 'checked' : '' }}>
+        <label for="date_filter__complete" class="btn btn-success">Время завершения</label>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary">Показать</button>
     </div>
 </form><br>
 
