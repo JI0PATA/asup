@@ -43,8 +43,8 @@ class Application extends Model
             else
                 $applications->whereBetween($date_filter, [format_date($request->date_from, 'Y-m-d 00:00:00'), now()]);
         }
-        elseif(!empty($request->date_to))
-            $applications->whereBetween($date_filter, [null, format_date($request->date_to, 'Y-m-d 23:59:59')]);
+        else if(!empty($request->date_to))
+            $applications->whereBetween($date_filter, ['0000-00-00 00:00:00', format_date($request->date_to, 'Y-m-d 23:59:59')]);
 
         if ($request->get('filter') === 'not-accept')
             $applications->where('accept_user_id', null);
