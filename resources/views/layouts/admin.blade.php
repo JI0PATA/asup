@@ -70,7 +70,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link" href="{{ route('admin.engineers') }}" role="button" aria-haspopup="true"
                            aria-expanded="false" v-pre>
-                            Техники
+                            Инженеры
                         </a>
                     </li>
                     <li class="nav-item dropdown">
