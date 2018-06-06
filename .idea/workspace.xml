@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="482ca8ce-5495-4b12-90f6-89f3249c8ab0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Application.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Application.php" afterDir="false" />
-    </list>
+    <list default="true" id="482ca8ce-5495-4b12-90f6-89f3249c8ab0" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +13,7 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.42058823">
+    <splitter split-orientation="horizontal" split-proportion="0.50764704">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="RegisterController.php" pinned="false" current-in-tab="false">
@@ -52,8 +50,8 @@
           <file leaf-file-name="Application.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Application.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="506">
-                  <caret line="46" column="55" selection-start-line="46" selection-start-column="55" selection-end-line="46" selection-end-column="76" />
+                <state relative-caret-position="1098">
+                  <caret line="61" column="56" selection-start-line="61" selection-start-column="56" selection-end-line="61" selection-end-column="56" />
                   <folding>
                     <element signature="e#23#36#0#PHP" expanded="true" />
                   </folding>
@@ -386,7 +384,7 @@
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="helpers&#9;FILE&#9;file://C:/OSPanel/domains/asup/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php&#10;helper&#9;FILE&#9;file://C:/OSPanel/domains/asup/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php&#10;back&#9;null&#9;null&#10;redirect&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pochta" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../bugs" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
@@ -431,12 +429,12 @@
       <workItem from="1525350718446" duration="21221000" />
       <workItem from="1525420024603" duration="3726000" />
       <workItem from="1525952250015" duration="3414000" />
-      <workItem from="1527579250508" duration="1070000" />
+      <workItem from="1527579250508" duration="2307000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102394000" />
+    <option name="totallyTimeSpent" value="103631000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -823,8 +821,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Application.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="46" column="55" selection-start-line="46" selection-start-column="55" selection-end-line="46" selection-end-column="76" />
+        <state relative-caret-position="1098">
+          <caret line="61" column="56" selection-start-line="61" selection-start-column="56" selection-end-line="61" selection-end-column="56" />
           <folding>
             <element signature="e#23#36#0#PHP" expanded="true" />
           </folding>

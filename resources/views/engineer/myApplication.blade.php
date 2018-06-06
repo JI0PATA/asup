@@ -1,4 +1,4 @@
-{{ config(['app.name' => 'Мои зявки']) }}
+{{ config(['app.name' => 'Мои заявки']) }}
 
 @extends('layouts.app')
 
