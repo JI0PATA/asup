@@ -74,3 +74,8 @@ td {
 	vertical-align: middle;
 }
 /************* /ТАБЛИЦЫ ************/
+
+footer {
+	text-align: center;
+	padding: 15px;
+}

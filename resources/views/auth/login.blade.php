@@ -47,4 +47,8 @@
         </div>
     </div>
 </div>
+
+<footer class="wp">
+    Сайт разработан <a href="https://vk.com/n.karpovich98" target="_blank">Анастасией Карпович</a>
+</footer>
 @endsection
